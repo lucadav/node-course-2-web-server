@@ -19,12 +19,13 @@ app.use((req, res, next) => {
             console.log('unable to write');
         }
     });
-
+/*
     res.render('working.hbs',{
         pageTitle: 'Home page',
         welcomeMessage: 'welcome to my website'
         
     });
+    */
     next();
 })
 
@@ -56,6 +57,13 @@ app.get('/about', (req, res) => {
 app.get('/bad', (req, res) => {
     res.send({
       erroMessage: 'unable to connect'
+    });
+});
+
+app.get('/project', (req, res) => {
+    res.render('project.hbs',{
+      pageTitle: 'this is My portfolio',
+      welcomeMessage: 'all my project'
     });
 });
 
